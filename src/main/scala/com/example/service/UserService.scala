@@ -17,23 +17,23 @@ trait UserService {
 
 class DefaultUserService(dbService: DbService) extends UserService{
 
-  override def retrieveAllUsers: Future[Seq[User]] = {
+  def retrieveAllUsers: Future[Seq[User]] = {
     dbService.retrieveAllUsers
   }
 
-  override def retrieveUser(id: Long): Future[Option[User]] = {
+  def retrieveUser(id: Long): Future[Option[User]] = {
     dbService.retrieveUser(id)
   }
 
-  override def saveUser(user: User): Future[Unit] = {
+  def saveUser(user: User): Future[Unit] = {
     dbService.saveUser(user)
   }
 
-  override def deleteUser(id: Long): Future[Int] = {
+  def deleteUser(id: Long): Future[Int] = {
     dbService.deleteUser(id)
   }
 
-  override def updateUser(user: User) = {
+  def updateUser(user: User) = {
     dbService.updateUser(user)
   }
 }
